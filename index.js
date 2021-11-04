@@ -7,31 +7,49 @@ const generateMarkdown = require("./utils/generateMarkdown.js");
 //An array of questions that the user will have to respond to to generate content for their README.
 const questions = [
   {
+    name: "title",
     type: "input",
     message: "What is your project title?",
-    name: "title",
   },
   {
-    type: "input",
-    message: "What does your project do?",
     name: "description",
+    type: "input",
+    message: "Write a brief summary of your project.",
   },
-  //   {
-  //     type: "input",
-  //     message: "How does one use your project?",
-  //     name: "usage",
-  //Run npm init and then npm i inquirer before node index.js for this project
-  //   },
-  //   {
-  //     type: "input",
-  //     message: "What are the guidelines for contributing to your project?",
-  //     name: "contributing",
-  //   },
-  //   {
-  //     type: "input",
-  //     message: "How does one test your project?",
-  //     name: "tests",
-  //   },
+  {
+    name: "installation",
+    type: "input",
+    message: "Any installation instructions?",
+  },
+  {
+    name: "usage",
+    type: "input",
+    message: "How does one use your project?",
+  },
+  {
+    name: "contributing",
+    type: "input",
+    message: "Any contribution guidelines?",
+  },
+  {
+    name: "tests",
+    type: "input",
+    message: "Any tests for your project?",
+  },
+  {
+    name: "license",
+    type: "list",
+    choices: [
+      "MIT",
+      "MPL-2.0",
+      "Apache-2.0",
+      "BSD-3-Clause",
+      "BSD-2-Clause",
+      "GPL",
+      "LGPL",
+    ],
+    message: "What license are you using?",
+  },
 ];
 
 // TODO: Create a function to write README file

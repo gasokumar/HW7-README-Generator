@@ -20,6 +20,7 @@ const questions = [
     type: "input",
     message: "How does one use your project?",
     name: "usage",
+    //Run npm init and then npm i inquirer before node index.js for this project
   },
   {
     type: "input",
@@ -48,7 +49,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer
     .prompt(questions)
-    .then((responses) => writeToFile(`README.md`, responses));
+    .then((JSON.stringify(responses)) => writeToFile(`README.md`, responses));
 }
 
 // Function call to initialize app

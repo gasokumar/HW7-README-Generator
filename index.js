@@ -50,6 +50,16 @@ const questions = [
     ],
     message: "What license are you using?",
   },
+  {
+    name: "github",
+    type: "input",
+    message: "What is your Github username?",
+  },
+  {
+    name: "email",
+    type: "input",
+    message: "What is your email address?",
+  },
 ];
 
 // TODO: Create a function to write README file
@@ -65,13 +75,10 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 // This function's sole purpose is to prompt the user by iterating through the array of questions created earlier in this document. Once the user has gone through the entire question bank, the file will then use the generateMarkdown to turn the responses into one long README string. That string is stored in the variable 'markdown'. That string will then be written to a file 'README.md'using the writetoFile function created above.
 function init() {
-  inquirer
-    .prompt(questions)
-
-    .then((responses) => {
-      let markdown = generateMarkdown(responses);
-      writeToFile(`README.md`, markdown);
-    });
+  inquirer.prompt(questions).then((responses) => {
+    let markdown = generateMarkdown(responses);
+    writeToFile(`README.md`, markdown);
+  });
 }
 
 // Function call to initialize app

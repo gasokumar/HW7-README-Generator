@@ -1,9 +1,8 @@
-const { write } = require("fs");
-const inquirer = require("inquirer");
-
 // TODO: Include packages needed for this application
-inquirer = require("inquirer");
-fs = require("fs");
+const inquirer = require("inquirer");
+const fs = require("fs");
+
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -14,22 +13,22 @@ const questions = [
   },
   {
     type: "input",
-    message: "What is your project title?",
+    message: "What does your project do?",
     name: "description",
   },
   {
     type: "input",
-    message: "What is your project title?",
+    message: "How does one use your project?",
     name: "usage",
   },
   {
     type: "input",
-    message: "What is your project title?",
+    message: "What are the guidelines for contributing to your project?",
     name: "contributing",
   },
   {
     type: "input",
-    message: "What is your project title?",
+    message: "How does one test your project?",
     name: "tests",
   },
 ];
@@ -37,7 +36,9 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
-    err ? console.error(err) : console.log("Success!")
+    err
+      ? console.error(err)
+      : console.log("Success! Your README.md file has been created :)")
   );
 }
 
@@ -51,8 +52,10 @@ function init() {}
 // Function call to initialize app
 init();
 
-// GIVEN a command-line application that accepts user input
-// WHEN I am prompted for information about my application repository
+//Add sections Title, Description, Table of Contents, Installation, Usage, Lisence, Contributing, Tests, Questions
+
+//Project title is displayed as title of README (#Project title is written first)
+
 // THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 // WHEN I enter my project title
 // THEN this is displayed as the title of the README

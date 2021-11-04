@@ -1,9 +1,10 @@
-// TODO: Include packages needed for this application
-const inquirer = require("inquirer");
+//Have to import the external modules fs for writing files, and inquirer, for prompting the user.
 const fs = require("fs");
+const inquirer = require("inquirer");
+// Have to import the local javascript generateMarkdown.js module given to us.
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
-// TODO: Create an array of questions for user input
+//An array of questions that the user will have to respond to to generate content for their README.
 const questions = [
   {
     type: "input",
@@ -44,12 +45,15 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-// This function's sole purpose is to prompt the user by iterating through the array of questions created earlier in this document. Once the user has gone through the entire question bank, the file will then use the writetoFile function we created to write the responses to that file.
+// This function's sole purpose is to prompt the user by iterating through the array of questions created earlier in this document. Once the user has gone through the entire question bank, the file will then use the generateMarkdown to turn the responses into one long README string. That string is stored in the variable 'markdown'. That string will then be written to a file 'README.md'using the writetoFile function created above.
 function init() {
-  inquirer.prompt(questions).then((responses) => {
-    let markdown = generateMarkdown(responses);
-    writeToFile(`README.md`, markdown);
-  });
+  inquirer
+    .prompt(questions)
+
+    .then((responses) => {
+      let markdown = generateMarkdown(responses);
+      writeToFile(`README.md`, markdown);
+    });
 }
 
 // Function call to initialize app

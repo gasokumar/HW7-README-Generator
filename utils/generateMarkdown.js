@@ -3,6 +3,7 @@
 function renderLicenseBadge(license) {
   switch (license) {
     case "MIT":
+      return;
 
     case "MPL-2.0":
 

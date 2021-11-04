@@ -14,7 +14,7 @@ const questions = [
   {
     name: "description",
     type: "input",
-    message: "Write a brief summary of your project.",
+    message: "A brief summary of your project:",
   },
   {
     name: "installation",
@@ -58,7 +58,7 @@ function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
     err
       ? console.error(err)
-      : console.log("Success! Your README.md file has been created :)")
+      : console.log("Your README.md file has been created :)")
   );
 }
 

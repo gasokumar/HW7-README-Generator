@@ -34,6 +34,7 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
+// This function's sole purpose is to create a file (fileName) and write (data) to it.
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
     err
@@ -42,17 +43,19 @@ function writeToFile(fileName, data) {
   );
 }
 
-inquirer
-  .prompt(questions)
-  .then((responses) => writeToFile(`README.md`, responses));
-
 // TODO: Create a function to initialize app
-function init() {}
+// This function's sole purpose is to prompt the user by iterating through the array of questions created earlier in this document. Once the user has gone through the entire question bank, the file will then use the writetoFile function we created to write the responses to that file.
+function init() {
+  inquirer
+    .prompt(questions)
+    .then((responses) => writeToFile(`README.md`, responses));
+}
 
 // Function call to initialize app
+//Now that we've created both the function to generate a file/write to it, as well as prompt the user to respond to the questions, we have to call the function that will start the process. Just because you've created a function doesn't mean it will automatically run. You have to call it. init() will run the function above, and that function will run the function above it as well.
 init();
 
-//Add sections Title, Description, Table of Contents, Installation, Usage, Lisence, Contributing, Tests, Questions
+//Add sections Title, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, Questions
 
 //Project title is displayed as title of README (#Project title is written first)
 

@@ -18,29 +18,31 @@ function generateMarkdown(responses) {
   return `# Project Title: ${responses.title}
   ## Description
   ${responses.description}
-  ##Table of Contents
+  ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing] (#contributing)
-- [Tests] (#tests)
+- [Contributing](#contributing)
+- [Tests](#tests)
 - [License](#license)
-- [Questions] (#questions)
+- [Questions](#questions)
 
-  ##Installation
+  ## Installation
   ${responses.installation}
-  ##Usage
+  ## Usage
   ${responses.usage}
-  ##Contributing
+  ## Contributing
   ${responses.contributing}
-  ##Tests
+  ## Tests
   ${responses.tests}
-  ##License
+  ## License
   ${responses.license}
-  ##Questions
-  ${responses.github}
-  ${responses.email}
+  //Add notice here
+
+  ## Questions
+  The creator's github profile is github.com/${responses.github}.
+  You can reach out to their email, ${responses.email} if you have any questions.
 
 `;
 }
-
+//Add a badge and a notice for license
 module.exports = generateMarkdown;

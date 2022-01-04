@@ -77,7 +77,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions).then((responses) => {
     let markdown = generateMarkdown(responses);
-    writeToFile(`README.md`, markdown);
+    writeToFile(`yourREADME.md`, markdown);
   });
 }
 

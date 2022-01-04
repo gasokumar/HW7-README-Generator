@@ -16,7 +16,7 @@
   ## Installation
   The files for this application must be downloaded in order to use it.
   ## Usage
-  Once the files have been downloaded, node index.js must be typed into the CLI  in order to invoke the application.
+  Once the files have been downloaded, `node index.js` must be typed into the CLI in order to invoke the application.
   ## Contributing
   Contributions are welcome!
   ## Tests

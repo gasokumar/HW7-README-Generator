@@ -70,7 +70,7 @@ function generateMarkdown(responses) {
   return `# Project Title: ${responses.title}
   ## Description
   ${badge}
-  
+
   ${responses.description}
   
   
@@ -81,6 +81,7 @@ function generateMarkdown(responses) {
 - [Tests](#tests)
 - [License](#license)
 - [Questions](#questions)
+
 
   ## Installation
   ${responses.installation}
@@ -93,8 +94,6 @@ function generateMarkdown(responses) {
   ## License
   This application is covered under the ${responses.license} license.
   ${licenseSection}
-  
-
   ## Questions
   The creator's github profile is github.com/${responses.github}.
   You can reach out to their email, ${responses.email}, if you have any questions.
